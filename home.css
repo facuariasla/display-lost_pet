@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+input, button, textarea {
+  font-family: 'Roboto', sans-serif;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem 1rem 2rem;
+  background-color: #FF6868;
+  box-shadow: 0px 15px 10px -18px #111;    
+}
+.logo img {
+  transition: all 0.2s;
+  height: 35px;
+
+}
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* Navbar DESK */
+.navbar-desk{
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .navbar-desk{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 120px 120px 100px;
+    justify-items: center;
+    align-items: center;
+  }
+}
+
+
+.navbar-desk nav {
+  text-align: center;
+  font-weight: 500;
+}
+.navbar-desk nav a{
+  transition: all 0.3s;
+
+}
+.navbar-desk nav a:hover {
+  color: white;
+
+}
+
+/* navbar-mobile */
+
+@media screen and (min-width: 768px) {
+  .navbar-mobile{
+    display: none;
+  }
+}
+
+.burger-btn img {
+  height: 35px;
+  transition: all 0.3s;
+}
+
+.burger-btn img:hover {
+  transform: scale(1.1);
+}
+
+/* NOT HEADER///////////////////////////////////////////////////////////// */
+
+.home-display-pets{
+  padding: 1.5rem;
+}
+
+.home-title-container{
+  padding: 1rem 0 2rem 0;
+}
+.home-title-container h1{
+  font-size: 40px;
+}
+
+
+.home-cards-container{
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-auto-rows: 300px;
+  justify-items: center;
+  padding: 1rem 0 1rem 0;
+}
+
+/* CARD */
+.card_pet{
+  z-index: 5;
+
+  border: 1px solid rgb(111, 111, 111);
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* shadow */
+  box-shadow:
+  2.4px 2px 2.2px rgba(0, 0, 0, 0.022),
+  5.8px 4.7px 5.3px rgba(0, 0, 0, 0.032),
+  10.9px 8.9px 10px rgba(0, 0, 0, 0.04),
+  19.4px 15.9px 17.9px rgba(0, 0, 0, 0.048),
+  36.3px 29.7px 33.4px rgba(0, 0, 0, 0.058),
+  87px 71px 80px rgba(0, 0, 0, 0.08);
+}
+
+.card_pet-img_cont img{
+  width: 100%;
+  min-height: 100px;
+  max-height: 210px;
+}
+
+.card_pet-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+.card_pet-info-tagname_location{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.card-pet-info-interactive{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.card_pet a{
+  color: rgb(0, 125, 192);
+  transition: all .3s;
+
+}
+.card_pet a:hover, a:active{
+  color: rgb(85, 215, 255);
+}
+
+
+
+
+
+
+
+
+/* MODAL/////////////////////////////////////////////////////////////////// */
+
+.modal{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(30, 28, 28, 0.435);
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  --opacity: 0;
+  --pointer:none;
+  opacity: 0;
+  opacity: var(--opacity);
+  pointer-events: var(--pointer);
+  transition: opacity .8s;
+}
+.modal:target{
+  --opacity: 1;
+  --pointer: unset;
+
+}
+
+.modal:target .report_container{
+  animation: show .8s .8 backwards;
+}
+@keyframes show {
+  0%{
+    transform: translateY(-150vh);
+  }
+}
+
+
+.report_container{
+  background-color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* width: 350px; */
+  width: 450px;
+  border: 1px solid black;
+}
+@media screen and (max-width: 500px) {
+  .report_container{
+    width: 90%;
+  }
+}
+
+.modal_close{
+  align-self: flex-end;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 500;
+}
+.modal_close a{
+  transition: all .3s;
+}
+.modal_close a:hover{
+  color: #FF6868;
+}
+
+.report_container h1{
+  padding: 10px 0 15px 0 ;
+}
+
+.report-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.report-form div {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 18px;
+  width: 100%;
+}
+.report-form label{
+  font-weight: 500;
+}
+.report-form textarea{
+  padding: 5px;
+  font-weight: 500;
+  resize: none;
+  background-color: rgb(255, 246, 254);
+  border: 1px solid;
+
+  /* max-width: 100%;
+  min-height: 60px; */
+}
+.report-form input{
+  font-weight: 500;
+  height: 40px;
+  padding: 5px;
+  background-color: rgb(255, 246, 254);
+  border: 1px solid;
+
+}
+
+.report-form .report-form_send{
+  width: 100%;
+  height: 40px;
+  border: none;
+  background-color: #FF9DF5;
+  transition: all .5s;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+.report-form .report-form_send:hover{
+  background-color: #e3b4df;
+
+}
+
+/* END MODAL////////////////////////////////////////////////////////// */
+/* MODAL INFORMATION */
+.information{
+  background-color: #ffefcc;
+
+}
+.text-information{
+}
+
+.text-information_desc{
+  padding-bottom: 20px;
+}
+
+/* MODAL MENU/////////////////////////////////////////////////////////////// */
+
+.modal-menu{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: #5bb6c2;
+
+
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  --opacity: 0;
+  --pointer:none;
+  opacity: 0;
+  opacity: var(--opacity);
+  pointer-events: var(--pointer);
+  transition: opacity .8s;
+}
+.modal-menu:target{
+  --opacity: 1;
+  --pointer: unset;
+
+}
+
+.modal-menu:target .report_container{
+  animation: show .8s .8 backwards;
+}
+@keyframes show {
+  0%{
+    transform: translateY(-150vh);
+  }
+}
+
+
+.modal-menu_container{
+
+background-color: #5bb6c2;
+
+
+border-radius: 10px;
+
+
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* width: 350px; */
+  width: 450px;
+  height: 80%;
+}
+@media screen and (max-width: 500px) {
+  .modal-menu_container{
+    width: 90%;
+  }
+}
+
+.menu-nav{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.menu-nav a{
+  padding: 1rem;
+  font-weight: 500;
+  font-size: 24px;
+  transition: all .3s;
+  text-align: center;
+}
+.menu-nav a:hover{
+  color: white;
+}
+
+.menu-acc_data{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-acc_data a{
+  padding: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  color: white;
+  transition: all .3s;
+}
+.menu-acc_data a:hover{
+  color: #bc4fb1;
+}

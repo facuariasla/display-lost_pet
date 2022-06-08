@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home display</title>
+  <link rel="stylesheet" href="./home.css">
+</head>
+
+<body>
+  <header class="header">
+    <nav class="logo">
+      <a href="#">
+        <img src="./image 1.svg" alt="logo">
+      </a>
+    </nav>
+
+    <!-- Responsive 768px -->
+    <nav class="navbar-desk">
+      <nav class="navbar-reportar">
+        <a href="#">Reportar mascota</a>
+      </nav>
+      <nav class="navbar-mascotas">
+        <a href="#">Mis mascotas reportadas</a>
+      </nav>
+      <nav class="navbar-profile">
+        <a href="#">Mis datos</a>
+      </nav>
+
+    </nav>
+
+    <!-- MOBILE RESPONSIVE////// -->
+    <nav class="navbar-mobile">
+      <a href="#menu_open" class="burger-btn">
+        <img src="./burger-icon.svg" alt="">
+      </a>
+
+    </nav>
+  </header>
+
+  <section class="modal-menu" id="menu_open">
+    <div class="modal-menu_container">
+      <div class="modal_close">
+        <a href="#header">Cerrar</a>
+      </div>
+
+      <div class="menu-nav">
+        <a href="#" class="mis-datos">Mis datos</a>
+
+        <a href="#" class="mis-datos">Mis mascotas reportadas</a>
+  
+        <a href="#" class="mis-datos">Reportar mascota</a>
+      </div>
+
+      <div class="menu-acc_data">
+        <p class="acc_email">pepito@hotmail.com</p>
+        <a href="#" class="acc_logout">
+          <u>CERRAR SESIÓN</u>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+  <!-- NOT HEADER ------------------------------------ -->
+
+  <div class="home-display-pets">
+
+    <div class="home-title-container">
+      <h1 class="home-title">
+        Mascotas perdidas cerca tuyo
+      </h1>
+    </div>
+
+    <div class="home-cards-container">
+
+      <!-- CARD -->
+      <div class="card_pet">
+        <div class="card_pet-img_cont">
+          <img src="https://placeimg.com/640/380/animals" alt="pet">
+        </div>
+
+        <div class="card_pet-info">
+          <div class="card_pet-info-tagname_location">
+            <h3 class="pet-name">Bobby</h3>
+            <p class="pet-location">NEUQUEN 📍</p>
+          </div>
+
+          <div class="card-pet-info-interactive">
+            <a href="#modal" class="interactive-report">REPORTAR</a>
+            <a href="#modal-info" class="interactive-information">INFORMACIÓN</a>
+          </div>
+        </div>
+      </div>
+      <!-- CARD -->
+      <div class="card_pet">
+        <div class="card_pet-img_cont">
+          <img src="https://placeimg.com/640/380/animals" alt="pet">
+        </div>
+
+        <div class="card_pet-info">
+          <div class="card_pet-info-tagname_location">
+            <h3 class="pet-name">Bobby</h3>
+            <p class="pet-location">NEUQUEN 📍</p>
+          </div>
+
+          <div class="card-pet-info-interactive">
+            <a href="#modal" class="interactive-report">REPORTAR</a>
+            <a href="#modal-info" class="interactive-information">INFORMACIÓN</a>
+          </div>
+        </div>
+      </div>
+      <!-- CARD -->
+      <div class="card_pet">
+        <div class="card_pet-img_cont">
+          <img src="https://placeimg.com/640/380/animals" alt="pet">
+        </div>
+
+        <div class="card_pet-info">
+          <div class="card_pet-info-tagname_location">
+            <h3 class="pet-name">Bobby</h3>
+            <p class="pet-location">NEUQUEN 📍</p>
+          </div>
+
+          <div class="card-pet-info-interactive">
+            <a href="#modal" class="interactive-report">REPORTAR</a>
+            <a href="#modal-info" class="interactive-information">INFORMACIÓN</a>
+          </div>
+        </div>
+      </div>
+      <!-- CARD -->
+      <div class="card_pet">
+        <div class="card_pet-img_cont">
+          <img src="https://placeimg.com/540/400/animals" alt="pet">
+        </div>
+
+        <div class="card_pet-info">
+          <div class="card_pet-info-tagname_location">
+            <h3 class="pet-name">Bobby</h3>
+            <p class="pet-location">NEUQUEN 📍</p>
+          </div>
+
+          <div class="card-pet-info-interactive">
+            <a href="#modal" class="interactive-report">REPORTAR</a>
+            <a href="#modal-info" class="interactive-information">INFORMACIÓN</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MODAL//////////////////////////////////////////////// -->
+    <section class="modal" id="modal">
+      <div class="report_container">
+        <div class="modal_close">
+          <a href="#header">Cerrar</a>
+        </div>
+        <div class="title-container">
+          <h1>Reportar info de Bobby</h1>
+        </div>
+        <form action="" class="report-form">
+          <div class="report-form_name">
+            <label for="fullname">TU NOMBRE</label>
+            <input type="text" name="fullname" required maxlength="50">
+          </div>
+          <div class="report-form_phone">
+            <label for="phone">TU TELÉFONO</label>
+            <input type="text" name="phone" required maxlength="50" placeholder="ej: 2994112233">
+          </div>
+          <div class="report-form_description">
+            <label for="description">¿DÓNDE LO VISTE?</label>
+            <textarea name="description" id="" cols="30" rows="8" required
+              placeholder="Ciudad, Calle - Altura. Referencia (opcional)" maxlength="249"></textarea>
+          </div>
+          <button type="submit" class="report-form_send">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+
+    <!-- MODAL 2//////////////////////////////////////////////// -->
+    <section class="modal" id="modal-info">
+      <div class="report_container information">
+
+        <div class="modal_close">
+          <a href="#header">Cerrar</a>
+        </div>
+
+        <div class="title-container">
+          <h1>Información de Bobby</h1>
+        </div>
+
+        <div class="text-information">
+          <p class="text-information_desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit cupiditate a laboriosam quasi dolore impedit, deserunt odit ipsa esse nisi, mollitia, sunt dolorum enim praesentium atque provident. Similique, minima harum?</p>
+          <p class="text-information_name">Bobby</p>
+          <p class="text-information_location">NEUQUEN 📍</p>
+        </div>
+
+
+      </div>
+    </section>
+
+
+
+
+
+
+  </div>
+
+
+</body>
+
+</html>
